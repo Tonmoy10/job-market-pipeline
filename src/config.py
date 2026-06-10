@@ -10,5 +10,9 @@ API_ID = os.getenv("JOB_API_ID")
 API_KEY = os.getenv("JOB_API_KEY")
 API_URL = os.getenv("JOB_API_URL")
 
-if not API_ID or not API_KEY or not API_URL:
-    raise ValueError
+if not API_ID:
+    raise ValueError("API ID Missing!")
+elif not API_KEY:
+    raise ValueError("API Key Missing!")
+elif not API_URL:
+    raise ValueError("API Url Missing!")
