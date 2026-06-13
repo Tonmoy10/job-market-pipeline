@@ -1,4 +1,4 @@
-from config import API_URL,API_ID,API_KEY
+from config import API_URL,API_ID,API_KEY,RAW_DATA_PATH
 import requests,json,pathlib,time
 
 creds = {
@@ -12,9 +12,9 @@ for page in range(1,6):
     data.extend(response["results"])
     time.sleep(1)
 
-save_path = pathlib.Path(__file__).resolve().parent.parent / "data" / "raw_jobs.json"
+#save_path = pathlib.Path(__file__).resolve().parent.parent / "data" / "raw_jobs.json"
 
-with open(save_path,"w") as jobs:
+with open(RAW_DATA_PATH,"w") as jobs:
     json.dump(data,jobs,indent=4)
 
 

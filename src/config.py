@@ -4,6 +4,8 @@ import os
 
 ROOT_DIR = Path(__file__).parent.parent
 
+RAW_DATA_PATH = ROOT_DIR / "data" / "raw_jobs.json"
+
 load_dotenv(ROOT_DIR / ".env")
 
 API_ID = os.getenv("JOB_API_ID")
