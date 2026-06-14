@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: core_job_market
+    columns:
+      - name: title
+        tests:
+          - not_null 
+
+      - name: description
+        tests:
+          - not_null
+
+      - name: company
+        tests:
+          - not_null
