@@ -3,7 +3,8 @@ import requests,json,pathlib,time
 
 creds = {
     "app_id":API_ID,
-    "app_key":API_KEY
+    "app_key":API_KEY,
+    "what":"software engineering"
 }
 data=[]
 for page in range(1,6):
@@ -11,8 +12,6 @@ for page in range(1,6):
     response = response.json()
     data.extend(response["results"])
     time.sleep(1)
-
-#save_path = pathlib.Path(__file__).resolve().parent.parent / "data" / "raw_jobs.json"
 
 with open(RAW_DATA_PATH,"w") as jobs:
     json.dump(data,jobs,indent=4)
